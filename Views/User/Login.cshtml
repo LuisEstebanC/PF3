@@ -1,0 +1,33 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="container">
+<div class="row">
+    <h1 class="mt-5"><strong>Iniciar Sesion</strong></h1>
+    <form class="col s6" method="POST" enctype="multipart/form-data">
+      <div class="card" style="padding: 30px;" >
+            @if(ErrorViewModel.ErrorLogin == true){
+                <span><strong>Usuario o Contraseña Incorrectos</strong></span>
+            }
+       <div class="row">
+           <h6><label><strong>Correo</strong></label></h6>
+              <input type="email" class="w3-input" id="" placeholder="Ingresa Correo" name="Correo_User" required>
+       </div>
+        
+        <div class="row">
+            <h6><label><strong>Contraseña</strong></label></h6>
+              <input type="password" class="w3-input" id="" placeholder="Ingresa Contraseña" name="Password_User" required>
+       </div>
+
+       <div class="row">
+            <button class="btn btn-dark" type="submit">Entrar</button>
+            <a asp-controller="User" asp-action="Registrar" class="btn btn-dark">Registrarme</a>
+       </div>
+      </div>
+    </form>
+</div>
+
+</div>
+
+

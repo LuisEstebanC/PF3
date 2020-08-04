@@ -1,0 +1,51 @@
+
+
+<div class="container">
+
+<div class="row">
+    <h3 class="mt-5"><strong>Nuevo Producto</strong></h3>
+    <form class="col s6" method="POST" enctype="multipart/form-data">
+        <div class="row card-panel">
+
+            <div class="input-field col s12">
+                <input id="Codigo_Producto" type="text" class="validate" name="Codigo_Producto" required>
+                <label for="Codigo_Producto">Codigo Producto</label>
+            </div>
+
+            <div class="input-field col s12">
+                <input id="Nombre_Producto" type="text" class="validate" name="Nombre_Producto" required>
+                <label for="Nombre_Producto">Nombre</label>
+            </div>
+
+            <div class="input-field col s12">
+                <input id="Precio_Producto" type="text" class="validate" name="Precio_Producto" required>
+                <label for="Precio_Producto">Precio</label>
+            </div>
+
+            <div class="input-field col s12">
+                <input id="Existencia_Producto" type="text" class="validate" name="Existencia_Producto" required>
+                <label for="Existencia_Producto">Existencia</label>
+            </div>
+
+            <div class="input-field col s12">
+                <input id="Categoria_Producto" type="text" class="validate" name="Categoria_Producto" required>
+                <label for="Categoria_Producto">Categoria</label>
+            </div>
+
+            <div class="file-field input-field col s12">
+                <div class="btn">
+                    <span>Imagen</span>
+                    <input type="file" name="file" id="Archivo" required>
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+            </div>
+
+        </div>
+        <button class="waves-effect waves-light btn" type="submit"><i class="material-icons right">save</i>Guardar</button>
+        <a class="waves-effect waves-light btn" asp-controller="Productos" asp-action="ProductoAdmin"><i class="material-icons right">clear</i>Cancelar</a>
+    </form>
+</div>
+
+</div>

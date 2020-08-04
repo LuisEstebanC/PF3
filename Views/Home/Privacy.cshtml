@@ -1,0 +1,14 @@
+﻿@model Usuario
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+@if(Usuario.getInstancia().UsuarioAuthentication == true){
+    <p>Use this page to detail your site's privacy policy.</p>
+}
+
+@if(Usuario.getInstancia().UsuarioAuthentication == true && Usuario.getInstancia().UsuarioIsAdmin == true ){
+    <p>Soy Admin</p>
+}
+

@@ -1,0 +1,110 @@
+﻿<div class="body1 row">
+    <div class="grid-productos col s12 m3 l3">
+        <div class="collection">
+            @{
+                <a asp-controller="Productos" asp-action="Productos" class="collection-item active" active>Todos</a>
+                Database conexionCa = Database.getInstancia();
+
+                Microsoft.Data.Sqlite.SqliteDataReader listado = conexionCa.GetCategorias();
+
+                while (listado.Read())
+                {
+                    <a href="/Productos/Productos?Categoria_Producto=@listado.GetString(0)" class="collection-item">@listado.GetString(0)</a>
+                }
+            }
+
+        </div>
+    </div>
+
+    <div class="grid-productos col s12 m9 l9">
+        <div class="Fcontainer">
+
+            <div class="containerP">
+
+
+                @{
+                    Database conexion = Database.getInstancia();
+
+                    try
+                    {
+                        Console.WriteLine(ViewBag.Categoria);
+                        Microsoft.Data.Sqlite.SqliteDataReader lista = conexion.GetProductoCategorias(ViewBag.Categoria);
+                        while (lista.Read())
+                        {
+                            string imgString = "/images/" + lista.GetString(5);
+
+
+                            <div class="card">
+                                <div class="head">
+                                    <div class="card-image">
+                                        <img src="@imgString">
+                                    </div>
+                                </div>
+                                <div class="price">
+                                    RD$ @lista.GetString(2)<br>
+                                </div>
+                                <div class="card-content">
+
+                                    <span class="card-title">@lista.GetString(1)</span>
+                                    <div class="cardinfo">poner un texto que describa el producto.</div>
+                                    <div class="footerCard">
+                                        <a class="btnComprar  waves-effect waves-yellow">Comprar ahora</a>
+                                        <a href="" class="btnCarrito"><i class="small fa fa-shopping-cart teal-text"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        }
+
+
+                    }
+                    catch (Microsoft.CSharp.RuntimeBinder.RuntimeBinderException e)
+                    {
+                        Console.WriteLine(e.Message);
+                        Microsoft.Data.Sqlite.SqliteDataReader lista = conexion.GetData();
+                        while (lista.Read())
+                        {
+                            string imgString = "/images/" + lista.GetString(5);
+
+
+
+                            <div class="card">
+                                <div class="head">
+                                    <div class="card-image">
+                                        <img src="@imgString">
+                                    </div>
+                                </div>
+                                <div class="price">
+                                    RD$ @lista.GetString(2)<br>
+                                </div>
+                                <div class="card-content">
+
+                                    <span class="card-title">@lista.GetString(1)</span>
+                                    <div class="cardinfo">poner un texto que describa el producto.</div>
+                                    <div class="footerCard">
+                                        <a class="btnComprar  waves-effect waves-yellow">Comprar ahora</a>
+                                        <a href="" class="btnCarrito"><i class="small fa fa-shopping-cart teal-text"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        }
+
+                    }
+                }
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+  
+

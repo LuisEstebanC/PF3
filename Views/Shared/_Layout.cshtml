@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Final</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4e8ef6cefa.js" crossorigin="anonymous"></script>
+    <link href="~/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="~/css/materialize.min.css" type="text/css" rel="stylesheet" />
+    <link href="~/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="~/css/Cards.css" type="text/css" rel="stylesheet" />
+    <link href="~/css/cardCategorias.css" type="text/css" rel="stylesheet" />
+    <link href="~/css/EstilosP.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="navbar">
+
+            <nav class="white">
+                <div class="nav-wrapper container">
+                    <a id="logo-container" class="brand-logo teal-text" asp-area="" asp-controller="Home" asp-action="index">CODEX<i class="large material-icons teal-text" style="font-size: 30px">developer_mode</i></a>
+
+                    <ul id="ContenedorIco" class="right hide-on-med-and-down">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="material-icons teal-text">home</i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link text-dark"><i class="tiny fa fa-shopping-cart teal-text"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link text-dark"><i class="small fa fa-user-circle teal-text"></i></a>
+                        </li>
+                    </ul>
+                    <ul id="nav-mobile" class="sidenav">
+                        <li>
+                            <div class="user-view">
+                                <div class="background">
+                                    <img src="~/image/background3.jpg" alt="">
+                                </div>
+                                <a href="">
+                                    <img src="~/image/ropaMale3.jpeg" alt="" class="circle">
+                                </a>
+                                <a href="">
+                                    <span class="name white-text">Nombre sexy</span>
+                                </a>
+                                <a href="">
+                                    <span class="email white-text">EmailSexy@gmail.com</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="small fa fa-user-circle black-text"></i>Perfil</a></li>
+                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="small fa fa-home black-text"></i>Home</a></li>
+                        <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="small fa fa-shopping-cart black-text"></i>Carrito</a></li>
+                        <li>                    
+                        </li>
+                    </ul>
+
+                    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                </div>
+            </nav>
+            <nav class="white">
+                <div class="nav-wrapper2 container">
+                    <ul class="center hide-on-med-and-down">
+                        <li class="nav-item">
+                        </li>
+                        <li><a  asp-area="" asp-controller="Productos" asp-action="Productos">Categorias</a></li>
+                        <li><a href="badges.html"></a></li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+    <div class="container" id="container1" style="width:100%; max-width: 1380px;">
+        <main role="main" >
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="page-footer teal">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">CODEX</h5>
+                    <p class="grey-text text-lighten-4">Aqui debe ir una brebe descripcion de la pagina o del proyecto lo que ustedes decidan ;) .</p>
+
+
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Ajustes</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">Link 1</a></li>
+                        <li><a class="white-text" href="#!">Link 2</a></li>
+                        <li><a class="white-text" href="#!">Link 3</a></li>
+                        <li><a class="white-text" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Contactanos</h5>
+                    <ul>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="small fa fa-facebook brown-text"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="small fa fa-twitter brown-text"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://github.com/BerlinSR/Proy-Final/invitations" class="nav-link text-dark"><i class="small fa fa-github brown-text"></i></a>
+                        </li>      
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="container">
+                &copy; 2020 - Final - <a class="brown-text text-lighten-3" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="~/js/init.js"></script>
+    <script src="~/js/materialize.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,50 @@
+<div class="container">
+
+<div class="row">
+    <h3 class="mt-5"><strong>Registrarse</strong></h3>
+    <form class="col s6" method="POST" enctype="multipart/form-data">
+        <div class="card" style="padding: 30px;" >
+
+         <div class="row">
+              <h6><label><strong>Nombre</strong></label></h6>
+               <input type="text" class="w3-input"  placeholder="Ingresa Nombre" name="Nombre_User" required>
+ 
+              <h6><label><strong>Apellido</strong></label></h6>
+              <input type="text" class="w3-input" placeholder="Ingresa Apellido" name="Apellido_User" required>
+       </div>
+      
+          <div class="row">
+
+               <h6><label><strong>Correo</strong></label></h6>
+              <input type="email" class="w3-input" placeholder="Ingresa Correo" name="Correo_User" required>
+
+              <h6><label><strong>Contraseña</strong></label></h6>
+              <input type="password" class="w3-input" placeholder="Ingresa Contraseña" name="Password_User" required>
+
+          </div>
+
+           <div class="row">
+
+               <h6><label><strong>Fecha de Nacimiento</strong></label></h6>
+              <input type="date" class="w3-input" placeholder="Ingresa Fecha" name="FechaNacimiento_User" required>
+
+              <h6><label><strong>Telefono</strong></label></h6>
+              <input type="text" class="w3-input" placeholder="Ingresa Telefono" name="Telefono_User" required>
+
+          </div>
+
+          <div class="row">
+              
+              <button type="submit" class="btn btn-dark"> Registrar </button>
+
+              <a asp-controller="Home" asp-action="Index" class="btn btn-dark">Atras</a>
+         
+          </div>
+
+
+
+         </div>
+    </form>
+</div>
+
+</div>

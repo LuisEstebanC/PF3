@@ -1,0 +1,79 @@
+﻿
+<div class="row">
+    <div class="container">
+        <h3><strong>Gestor de Productos</strong></h3>
+        <hr>
+
+        <div class="grid-productos col s12 m12 l12">
+            <div class="Fcontainer">
+                <div class="">
+                    <a class="btn-floating btn-large red waves-effect waves-light tooltipped" data-position="bottom" data-tooltip="Agrefar producto" asp-controller="Productos" asp-action="NewProducto">
+                        <i class="large material-icons">add</i>
+                    </a>
+                </div>
+                <div class="containerP">
+                    @{
+                        Database conexion = Database.getInstancia();
+
+                        Microsoft.Data.Sqlite.SqliteDataReader lista = conexion.GetData();
+
+                        while (lista.Read())
+                        {
+                            string imgString = "/images/" + lista.GetString(5);
+
+
+                            <div class="card horizontal">
+                                <div class="card-image">
+                                    <img src="@imgString">
+                                </div>
+                                <div class="card-stacked">
+                                    <div class="card-content">
+                                        <span class="card-title">@lista.GetString(1)</span>
+                                        <p><strong>CODIGO:</strong> <span class="new badge blue" data-badge-caption="@lista.GetString(0)"></span></p>
+                                        <p><strong>PRECIO:</strong> <span class="new badge blue" data-badge-caption="@lista.GetString(2)"></span></p>
+                                        <p><strong>EXISTENCIA:</strong><span class="new badge blue" data-badge-caption="@lista.GetString(3)"></span></p>
+                                        <p><strong>CATEGORIA:</strong><span class="new badge red" data-badge-caption="@lista.GetString(4)"></span></p>
+                                    </div>
+                                </div>
+                                <div class="footerCardA">
+                                    <a class="center btn" style="width: 48.5%;" href="/Productos/UpdateProducto?Codigo_Producto=@lista.GetString(0)"><i class="material-icons center">edit</i></a>
+                                    <a class="center btn" style="width: 48.5%;" href="/Productos/DeleteProducto?Codigo_Producto=@lista.GetString(0)"><i class="material-icons center">delete</i></a>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+             var elems = document.querySelectorAll('.tooltipped');
+             var instances = M.Tooltip.init(elems);
+
+        });
+    </script>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="container">
+<div class="row">
+    <h1 class="mt-5"><strong>Agreagar Admin</strong></h1>
+    <form class="col s6" method="POST" enctype="multipart/form-data">
+      <div class="card" style="padding: 30px;" >
+            @if(ErrorViewModel.ErrorAdmin == true){
+                <span><strong>Usuario no registrado</strong></span>
+                ErrorViewModel.ErrorAdmin = false;
+            }
+            @if(ErrorViewModel.CompletadoAdmin == true){
+                <span><strong>Admin Otorgado</strong></span>
+                ErrorViewModel.CompletadoAdmin = false;
+            }
+       <div class="row">
+           <h6><label><strong>Correo</strong></label></h6>
+              <input type="email" class="w3-input" id="" placeholder="Ingresa Correo" name="Correo_User" required>
+       </div>
+
+       <div class="row">
+            <button class="btn btn-dark" type="submit">Otorgar Admin</button>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-dark">Home</a>
+       </div>
+      </div>
+    </form>
+</div>
+
+</div>
+
+

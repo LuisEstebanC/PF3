@@ -1,0 +1,116 @@
+﻿
+{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    
+}
+
+.Ccards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 110vh;
+    background: #f5f6fa;
+    background-attachment:fixed;
+}
+
+.containerr {
+    position: relative;
+    width: fit-content;
+    padding: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+   
+
+    .containerr .card {
+        position: relative;
+        width: 286px;
+        height: 370px;
+        background: #fff;
+        margin: 15px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+        transition: 0.5s;
+    }
+    .containerr:hover .card
+    {
+        filter:blur(2px);
+        transform:scale(0.9);
+        opacity:1 ;
+    }
+    .containerr .card:hover {
+        filter: blur(0px);
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    .containerr .card .circle {
+        position: relative;
+        width: 105%;
+        height: 100%;
+        background: #fff;
+        clip-path: circle(180px at center 0);
+        text-align: center;
+    }
+    .containerr .card .contentC
+    {
+        position:absolute;
+        bottom:0px;
+        padding-bottom: 4%;
+        text-align:center;
+
+    }
+    
+    .containerr .card .contentC p
+    {
+        color:#666;
+    }
+
+        .containerr .card .contentC a {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #28B463;
+            color: #fff;
+            border-radius: 40px;
+            text-decoration: none;
+            margin-top: -7px;
+        }
+        .containerr .card .contentC  h4 {
+            margin-bottom: 10px;
+        }
+    .collapsible-header 
+    {
+        height: 10em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .collapsible-header a {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ff4000;
+            color: #fff;
+            border-radius: 40px;
+            text-decoration: none;
+            margin-top: -7px;
+        }
+    .collapsible-header, .collapsible-body, .collapsible, ul.collapsible > li {
+   
+    border: 0 !important;
+    box-shadow: none !important;
+    background: #fff;
+    }
+    .collapsible-body {
+    background: #f5f6fa;
+    }
+
+
