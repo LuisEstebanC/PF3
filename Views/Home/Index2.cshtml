@@ -1,0 +1,42 @@
+﻿@model Final.Models.Persona
+@{
+    ViewData["Title"] = "Inicio";
+
+}
+
+<div class="container right-align">
+    <div class="card" style="padding: 30px;">
+        <h5 class="center-align">Consultar mi compra</h5>
+        <form method="post" asp-action="Ubicacion" asp-controller="Home">
+            <div class="input-field col s6">
+                @Html.TextBoxFor(m => m.idUsuario, new { @name = "idUsuario", @id = "idUsuario" })
+                <label for="idUsuario">ID Usuario</label>
+            </div>
+            <div class="input-field col s6">
+                @Html.TextAreaFor(m => m.Comentario, new { @name = "comentario", @id = "comentario" })
+                <label for="Comentario">Comentarios al envio</label>
+            </div>
+
+            <br />
+
+            <h5 class="center-align">Ingresa los datos para el envio</h5>
+            <div class="input-field col s6">
+                @Html.TextBoxFor(m => m.Cedula, new { @name = "Cedula", @id = "Cedula" })
+                <label for="Cedula">Cedula</label>
+            </div>
+            <div class="input-field col s6">
+                @Html.TextBoxFor(m => m.lat, new { @name = "lat ", @id = "lat" })
+                <label for="Latitud">Latitud </label>
+            </div>
+            <div class="input-field col s6">
+                @Html.TextBoxFor(m => m.lng, new { @name = "lng", @id = "lng" })
+                <label for="Longitud">Longitud</label>
+            </div>
+
+            <div class="center-align">
+                <button class="btn btn-success btn-small" type="submit">Enviar</button>
+            </div>
+
+        </form>
+    </div>
+</div>

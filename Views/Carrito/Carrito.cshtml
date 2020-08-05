@@ -43,7 +43,7 @@
                         <h6><strong>Monto Total: RD$</strong>@MontoTotal</h6>
 
                         @* <button class="btn btn-dark" onclick="pagar(MontoTotal)"><i class="material-icons right">local_atm</i>Ver estado de pedidos</button> *@
-                <div id="paypal-button-container" onclick="valorPago(Convert.ToString(MontoTotal))">Ver estado de pedidos</div>
+                <div id="paypal-button-container" onclick="valorPago(Convert.ToString(MontoTotal))"></div>
                     }
 
                 </div>
@@ -79,7 +79,7 @@
 
                         <h6><strong>Monto Total: RD$</strong>@MontoTotal</h6>
 
-                        <button class="btn btn-dark"><i class="material-icons right">local_atm</i>Ver estado de pedidos</button>
+                        <button class="btn btn-dark" asp-area="" asp-controller="Home" asp-action="Index2"><i class="material-icons right">local_atm</i>Ver estado de pedidos</button>
 
                     }
                 </div>
