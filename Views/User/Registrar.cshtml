@@ -1,50 +1,95 @@
-<div class="container">
+﻿
 
-<div class="row">
-    <h3 class="mt-5"><strong>Registrarse</strong></h3>
-    <form class="col s6" method="POST" enctype="multipart/form-data">
-        <div class="card" style="padding: 30px;" >
+@{
+    Layout = null;
 
-         <div class="row">
-              <h6><label><strong>Nombre</strong></label></h6>
-               <input type="text" class="w3-input"  placeholder="Ingresa Nombre" name="Nombre_User" required>
- 
-              <h6><label><strong>Apellido</strong></label></h6>
-              <input type="text" class="w3-input" placeholder="Ingresa Apellido" name="Apellido_User" required>
-       </div>
-      
-          <div class="row">
+}
 
-               <h6><label><strong>Correo</strong></label></h6>
-              <input type="email" class="w3-input" placeholder="Ingresa Correo" name="Correo_User" required>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4e8ef6cefa.js" crossorigin="anonymous"></script>
+    <link href="~/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="~/css/materialize.min.css" type="text/css" rel="stylesheet" />
+    <link href="~/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="~/css/Cards.css" type="text/css" rel="stylesheet" />
+    <link href="~/css/cardCategorias.css" type="text/css" rel="stylesheet" />
+    <link href="~/css/EstilosP.css" type="text/css" rel="stylesheet" />
+    <link href="~/css/LoginYMas.css" type="text/css" rel="stylesheet" />
+</head>
+<body id="bodyLogin">
+    <dv class="Lcontainer">
+        <div class="container">
+            <div class="row">
+                
 
-              <h6><label><strong>Contraseña</strong></label></h6>
-              <input type="password" class="w3-input" placeholder="Ingresa Contraseña" name="Password_User" required>
+                <form id="primerCCC" class="col s6" method="POST" enctype="multipart/form-data">
 
-          </div>
+                    <div class="cardL">
+                        <div class="row">
+                            <div class="col s12 m12 l12">
+                                <a id="logo-containerL" class="brand-logo teal-text" style="font-size: 30px" asp-area="" asp-controller="Home" asp-action="index">CODEX<i class="large material-icons teal-text" style="font-size: 30px">developer_mode</i></a>
+                            </div>
+                        </div>
+                        <h3 class="mt-5"><strong>Registrarse</strong></h3>
 
-           <div class="row">
+                        <div>
 
-               <h6><label><strong>Fecha de Nacimiento</strong></label></h6>
-              <input type="date" class="w3-input" placeholder="Ingresa Fecha" name="FechaNacimiento_User" required>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m6 l6">
+                                <h6><label class="etiquetas"><strong>Nombre</strong></label></h6>
+                                <input type="text" class="w3-input" placeholder="Ingresa Nombre" name="Nombre_User" required>
 
-              <h6><label><strong>Telefono</strong></label></h6>
-              <input type="text" class="w3-input" placeholder="Ingresa Telefono" name="Telefono_User" required>
-
-          </div>
-
-          <div class="row">
-              
-              <button type="submit" class="btn btn-dark"> Registrar </button>
-
-              <a asp-controller="Home" asp-action="Index" class="btn btn-dark">Atras</a>
-         
-          </div>
+                                <h6><label class="etiquetas"><strong>Fecha de Nacimiento</strong></label></h6>
+                                <input type="date" class="w3-input" placeholder="Ingresa Fecha" name="FechaNacimiento_User" required>
 
 
 
-         </div>
-    </form>
-</div>
+                                <h6><label class="etiquetas"><strong>Correo</strong></label></h6>
+                                <input type="email" class="w3-input" placeholder="Ingresa Correo" name="Correo_User" required>
+                            </div>
 
-</div>
+
+                            <div class="col s12 m6 l6">
+                                <h6><label class="etiquetas"><strong>Apellido</strong></label></h6>
+                                <input type="text" class="w3-input" placeholder="Ingresa Apellido" name="Apellido_User" required>
+
+                                <h6><label class="etiquetas"><strong>Telefono</strong></label></h6>
+                                <input type="text" class="w3-input" placeholder="Ingresa Telefono" name="Telefono_User" required>
+
+                                <h6><label class="etiquetas"><strong>Contraseña</strong></label></h6>
+                                <input type="password" class="w3-input" placeholder="Ingresa Contraseña" name="Password_User" required>
+                            </div>
+
+
+                        </div>
+
+                        <div id="botones" class="row">
+
+                            <button id="btnRegistrar" type="submit" class="btn btn-dark"> Registrar </button>
+
+                            <a asp-controller="User" asp-action="Login" class="btn btn-dark">Atras</a>
+
+                        </div>
+
+
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </dv>
+
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="~/js/init.js"></script>
+    <script src="~/js/materialize.js" asp-append-version="true"></script>
+
+</body>
+</html>

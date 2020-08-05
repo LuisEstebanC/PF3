@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\frand\\Desktop\\New folder (2)\\Proy-Final-CasiFinal\\Final.csproj": {}
+    "C:\\Users\\Luis\\Desktop\\Ultimointento3\\Proy-Final\\Final.csproj": {}
   },
   "projects": {
-    "C:\\Users\\frand\\Desktop\\New folder (2)\\Proy-Final-CasiFinal\\Final.csproj": {
+    "C:\\Users\\Luis\\Desktop\\Ultimointento3\\Proy-Final\\Final.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\frand\\Desktop\\New folder (2)\\Proy-Final-CasiFinal\\Final.csproj",
+        "projectUniqueName": "C:\\Users\\Luis\\Desktop\\Ultimointento3\\Proy-Final\\Final.csproj",
         "projectName": "Final",
-        "projectPath": "C:\\Users\\frand\\Desktop\\New folder (2)\\Proy-Final-CasiFinal\\Final.csproj",
-        "packagesPath": "C:\\Users\\frand\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\frand\\Desktop\\New folder (2)\\Proy-Final-CasiFinal\\obj\\",
+        "projectPath": "C:\\Users\\Luis\\Desktop\\Ultimointento3\\Proy-Final\\Final.csproj",
+        "packagesPath": "C:\\Users\\Luis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Luis\\Desktop\\Ultimointento3\\Proy-Final\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\frand\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Luis\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -53,24 +53,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.0.1, 3.0.1]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.0.3, 3.0.3]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[3.0.0, 3.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -79,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

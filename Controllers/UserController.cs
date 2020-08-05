@@ -26,7 +26,7 @@ namespace Final.Controllers
         {
             Usuario.getInstancia().UsuarioAuthentication = false;
             Usuario.getInstancia().UsuarioIsAdmin = false;
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Login", "User");
         }
 
         [HttpPost]
@@ -71,6 +71,7 @@ namespace Final.Controllers
                     Usuario.getInstancia().UsuarioAuthentication = true;
                     if(lista.GetString(2) == "Admin"){
                         Usuario.getInstancia().UsuarioIsAdmin = true;
+                        return RedirectToAction("Index", "Home");
                     }
                 }
                 RedirectToAction("Index","Home");
