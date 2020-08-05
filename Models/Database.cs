@@ -109,17 +109,19 @@ namespace Final.Models
             return reader;
         }
 
-        public SqliteDataReader GetBithdayData(int mes){
+        public SqliteDataReader GetBithdayData(string mes)
+        {
+
 
             connection.Open();
 
             var selectCmd = connection.CreateCommand();
-            selectCmd.CommandText = "SELECT * FROM Usuario WHERE MONTH = '"+mes+"';";
+            selectCmd.CommandText = "SELECT nombre,apellido,correo, strftime('%m',Fecha_nacimiento) FROM Usuario WHERE strftime('%m',Fecha_nacimiento) = '" + mes + "';";
 
             var reader = selectCmd.ExecuteReader();
 
             return reader;
-            
+
         }
     }
 }

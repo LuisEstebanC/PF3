@@ -358,7 +358,6 @@ C:\Users\Luis\Desktop\Ultimointento3\Proy-Final\obj\Debug\netcoreapp3.0\Razor\Vi
 C:\Users\Luis\Desktop\Ultimointento3\Proy-Final\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Luis\Desktop\Ultimointento3\Proy-Final\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Luis\Desktop\Ultimointento3\Proy-Final\obj\Debug\netcoreapp3.0\Razor\Views\User\AgregarAdmin.cshtml.g.cs
-C:\Users\Luis\Desktop\Ultimointento3\Proy-Final\obj\Debug\netcoreapp3.0\Razor\Views\User\GetBirthday.cshtml.g.cs
 C:\Users\Luis\Desktop\Ultimointento3\Proy-Final\obj\Debug\netcoreapp3.0\Razor\Views\User\Login.cshtml.g.cs
 C:\Users\Luis\Desktop\Ultimointento3\Proy-Final\obj\Debug\netcoreapp3.0\Razor\Views\User\Registrar.cshtml.g.cs
 C:\Users\Luis\Desktop\Ultimointento3\Proy-Final\obj\Debug\netcoreapp3.0\Razor\Views\_ViewImports.cshtml.g.cs
@@ -370,3 +369,4 @@ C:\Users\Luis\Desktop\Ultimointento3\Proy-Final\obj\Debug\netcoreapp3.0\Final.cs
 C:\Users\Luis\Desktop\Ultimointento3\Proy-Final\obj\Debug\netcoreapp3.0\Final.dll
 C:\Users\Luis\Desktop\Ultimointento3\Proy-Final\obj\Debug\netcoreapp3.0\Final.pdb
 C:\Users\Luis\Desktop\Ultimointento3\Proy-Final\obj\Debug\netcoreapp3.0\Razor\Views\User\PruebaUserInfo.cshtml.g.cs
+C:\Users\Luis\Desktop\Ultimointento3\Proy-Final\obj\Debug\netcoreapp3.0\Razor\Views\User\DameMes.cshtml.g.cs

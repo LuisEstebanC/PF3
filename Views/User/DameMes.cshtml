@@ -1,0 +1,61 @@
+
+   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <div class="text-center" style="width: 35%;">
+        <form method="POST" enctype="multipart/form-data">
+            <div class="input-field col s12">
+                <select name="mes">
+                    <option disabled selected>Elige un mes</option>
+                    <option value="01">Enero</option>
+                    <option value="02">Febrero</option>
+                    <option value="03">Marzo</option>
+                    <option value="04">Abril</option>
+                    <option value="05">Mayo</option>
+                    <option value="06">Junio</option>
+                    <option value="07">Julio</option>
+                    <option value="08">Agosto</option>
+                    <option value="09">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+
+                <label>Meses</label>
+            </div>
+            <button class="btn btn-dark" type="submit">Mostrar y Descargar</button>
+        </form>
+
+    </div>
+
+    @{
+
+        Database conexion = Database.getInstancia();
+
+        Microsoft.Data.Sqlite.SqliteDataReader lista = conexion.GetBithdayData(ViewBag.Mes);
+        while (lista.Read())
+        {
+
+            <ul class="collection">
+                <li class="collection-item avatar">
+                    <span class="title">@lista.GetString(0)</span>
+                    <p>
+                        @lista.GetString(1)<br>
+                    @lista.GetString(2)
+                </p>
+                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+            </li>
+
+        </ul>
+
+    }
+    }
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+  });
+    </script>
+

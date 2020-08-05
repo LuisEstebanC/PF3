@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Final.Models;
+using Microsoft.Data.Sqlite;
+using System.Text;
 
 namespace Final.Controllers
 { 
@@ -69,7 +71,8 @@ namespace Final.Controllers
             if(lista.HasRows){
                 while(lista.Read()){
                     Usuario.getInstancia().UsuarioAuthentication = true;
-                    if(lista.GetString(2) == "Admin"){
+                    
+                    if (lista.GetString(2) == "Admin"){
                         Usuario.getInstancia().UsuarioIsAdmin = true;
                         return RedirectToAction("Index", "Home");
                     }
@@ -114,24 +117,83 @@ namespace Final.Controllers
 
         
 
-/*         [HttpPost]
-        public IActionResult GetBirthday(int mes)
+        [HttpPost]
+        
+        public IActionResult DameMes(string mes)
+
         {    
             Database conexion = Database.getInstancia();
 
             Microsoft.Data.Sqlite.SqliteDataReader lista = conexion.GetBithdayData(mes);
+             
+             var builder = new StringBuilder();
+            builder.AppendLine("Nombre,Apellido,Correo");
 
+            while(lista.Read()){
+
+               Console.WriteLine(lista.GetString(0));
+                Console.WriteLine(lista.GetString(1));
+                Console.WriteLine(lista.GetString(2));
+     
+                builder.AppendLine($"{lista.GetString(0)},{lista.GetString(1)},{lista.GetString(2)}");
+
+                }
+
+                ViewBag.Mes = mes;
+
+              return File(Encoding.UTF8.GetBytes(builder.ToString()), "text/csv", "Usuario.csv");
+        
+           
+
+        }
+          [HttpGet]
+        public IActionResult DameMes(){
+        
+        return View();
             
-            while (lista.Read())
-            {
-                @lista.GetString(0);
+        }
+            
+
+            public FileResult CSV(){
+
+                Database conexion = Database.getInstancia();
                 
+                
+                 Microsoft.Data.Sqlite.SqliteDataReader lista = conexion.GetBithdayData(ViewBag.Mes);
+
+              Console.WriteLine(lista.HasRows);
+              //List<User> Lista = BirthdaysListAsync(Month);
+
+
+            var builder = new StringBuilder();
+            builder.AppendLine("Nombre,Apellido,Correo");
+
+                 List<string[]> Lista = new List<string[]>();
+                 
+                     while (lista.Read())
+                {
+                    string[] SqlArray = new string[lista.FieldCount];
+                    for (int i = 0; i < lista.FieldCount; i++)
+                    {
+                        SqlArray[i] = lista[i].ToString();
+                    }
+                    Lista.Add(SqlArray);
+
+                }
+                foreach (var item in Lista)
+            {
+                builder.AppendLine($"{item[0]},{item[1]},{item[2]}");
             }
 
-            return View();
-        } */
+     
+
+            return File(Encoding.UTF8.GetBytes(builder.ToString()), "text/csv", "Usuario.csv");
+
+            }
+
+        }
 
     }
 
 
-}
+
