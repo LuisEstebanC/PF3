@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Luis\\Desktop\\Ultimointento3\\Proy-Final\\Final.csproj": {}
+    "C:\\Users\\Luis\\Desktop\\PF3\\Final.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Luis\\Desktop\\Ultimointento3\\Proy-Final\\Final.csproj": {
+    "C:\\Users\\Luis\\Desktop\\PF3\\Final.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luis\\Desktop\\Ultimointento3\\Proy-Final\\Final.csproj",
+        "projectUniqueName": "C:\\Users\\Luis\\Desktop\\PF3\\Final.csproj",
         "projectName": "Final",
-        "projectPath": "C:\\Users\\Luis\\Desktop\\Ultimointento3\\Proy-Final\\Final.csproj",
+        "projectPath": "C:\\Users\\Luis\\Desktop\\PF3\\Final.csproj",
         "packagesPath": "C:\\Users\\Luis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luis\\Desktop\\Ultimointento3\\Proy-Final\\obj\\",
+        "outputPath": "C:\\Users\\Luis\\Desktop\\PF3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Luis\\AppData\\Roaming\\NuGet\\NuGet.Config",

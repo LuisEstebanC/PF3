@@ -1,0 +1,80 @@
+﻿
+@model Final.Models.Pedidos
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+
+
+<div class="center-align">
+    <br />
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>  id Orden de pago</th>
+                <th> id producto</th>
+                <th> id estado</th>
+                <th> Comentario</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < ViewBag.lenght; i++)
+            {
+                <tr>
+                    <td>@ViewBag.id</td>
+                    <td>@ViewBag.idOrdenPago</td>
+                    <td>@ViewBag.idProducto</td>
+
+                    <td>@ViewBag.Estado</td>
+                    <td>@ViewBag.Comentario</td>
+                </tr>
+            }
+
+
+
+        </tbody>
+
+
+    </table>
+
+    <button asp-controller="Pedidos " asp-action="completado">Completado</button>
+    <button asp-controller="Pedidos " asp-action="Procesado">Procesado</button>
+    <button asp-controller="Pedidos " asp-action="Solicitado">Solicitado</button>
+
+
+
+
+</div>
+<br />
+<h4>La Ubicacion es la siguiente:</h4>
+<br />
+<div id="map" style="width: 750px; height: 500px;"></div>
+
+<a href="~/Home/Index">Volver</a>
+
+        {
+<script>
+
+    
+         var mymap = L.map('map').setView( [@ViewBag.lat , @ViewBag.lng]);
+
+
+            L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: 'pk.eyJ1Ijoic2FkeTAxIiwiYSI6ImNrZGV6c21pdDFxajMycXJ5dXJlcDAybnkifQ.-SnTggLeJwjmlwOeJIW4bA'
+            }).addTo(mymap);
+
+                 L.marker([@ViewBag.lat , @ViewBag.lng]).addTo(mymap)
+                .bindPopup("Ubicacion");
+
+
+
+
+
+
+
+</script>
