@@ -71,13 +71,19 @@ namespace Final.Controllers
             if(lista.HasRows){
                 while(lista.Read()){
                     Usuario.getInstancia().UsuarioAuthentication = true;
-                    
+
+                    Usuario.getInstancia().IdUser = lista.GetString(0);
+                    Usuario.getInstancia().Nombre = lista.GetString(1);
+                    Usuario.getInstancia().Apellido = lista.GetString(2);
+                   
+                 
+
                     if (lista.GetString(2) == "Admin"){
                         Usuario.getInstancia().UsuarioIsAdmin = true;
                         return RedirectToAction("Index", "Home");
                     }
                 }
-                RedirectToAction("Index","Home");
+               return RedirectToAction("Index","Home");
             }else{
                 ErrorViewModel.ErrorLogin = true;
                 Usuario.getInstancia().UsuarioAuthentication = false;

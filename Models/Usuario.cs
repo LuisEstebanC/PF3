@@ -17,6 +17,8 @@ namespace Final.Models
         
         public bool UsuarioAuthentication { get; set; }
         public bool UsuarioIsAdmin { get; set; }
+
+        public string IdUser { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Direccion { get; set; }

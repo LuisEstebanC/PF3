@@ -1,0 +1,123 @@
+﻿
+<head>
+    <!-- Add meta tags for mobile and IE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+</head>
+
+@model ErrorViewModel
+@{
+    ViewData["Title"] = "Carrito";
+}
+<div class="container">
+    <div class="row">
+        <div class="col s5">
+            <h4>Carrito</h4>
+            <hr>
+            <div class="card">
+                <div class="card-content">
+                    @{
+                        Database Conexion = Database.getInstancia();
+
+                        string Query = "SELECT Carrito.id, Productos.Nombre, Productos.Precio_Unitario FROM Carrito " +
+                        "INNER JOIN Productos ON Carrito.idProducto = Productos.CodArticulo " +
+                        "INNER JOIN Usuario ON Carrito.idUsuario = Usuario.idUsuario;";
+
+                        Microsoft.Data.Sqlite.SqliteDataReader reader = Conexion.GetData(Query);
+                        int MontoTotal = 0;
+
+
+                        <ul class="collection">
+                            @{
+                                if (reader.HasRows)
+                                {
+                                    while (reader.Read())
+                                    {
+                                        MontoTotal = MontoTotal + Convert.ToInt32(reader.GetString(2));
+                                        <li class="collection-item">Codigo: @reader.GetString(0) <br> Producto: @reader.GetString(1) <br> Precio: RD$@reader.GetString(2)</li>
+                                    }
+                                }
+                            }
+                        </ul>
+
+                        <h6><strong>Monto Total: RD$</strong>@MontoTotal</h6>
+
+                        @* <button class="btn btn-dark" onclick="pagar(MontoTotal)"><i class="material-icons right">local_atm</i>Ver estado de pedidos</button> *@
+                <div id="paypal-button-container" onclick="valorPago(Convert.ToString(MontoTotal))">Ver estado de pedidos</div>
+                    }
+
+                </div>
+            </div>
+        </div>
+        <div class="col s5">
+            <h4>Pedidos</h4>
+            <hr>
+            <div class="card">
+                <div class="card-content">
+                    @{
+
+                        string Query2 = "SELECT Carrito.id, Productos.Nombre, Productos.Precio_Unitario FROM Carrito " +
+                        "INNER JOIN Productos ON Carrito.idProducto = Productos.CodArticulo " +
+                        "INNER JOIN Usuario ON Carrito.idUsuario = Usuario.idUsuario;";
+
+                        Microsoft.Data.Sqlite.SqliteDataReader readerr = Conexion.GetData(Query2);
+                        //int MontoTotal=0;
+
+
+                        <ul class="collection">
+                            @{
+                                if (readerr.HasRows)
+                                {
+                                    while (readerr.Read())
+                                    {
+                                        MontoTotal = MontoTotal + Convert.ToInt32(readerr.GetString(2));
+                                        <li class="collection-item">Codigo: @readerr.GetString(0) <br> Producto: @readerr.GetString(1) <br> Precio: RD$@readerr.GetString(2)</li>
+                                    }
+                                }
+                            }
+                        </ul>
+
+                        <h6><strong>Monto Total: RD$</strong>@MontoTotal</h6>
+
+                        <button class="btn btn-dark"><i class="material-icons right">local_atm</i>Ver estado de pedidos</button>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://www.paypal.com/sdk/js?client-id=AWb40yaoCcoJvDU6EQAc8VEnQbYWaMHlS_YZZFJPIlbjMA8Zgb_t2uSQ_GfkNgu_zoXIqL5F99iFFAGb&currency=USD"></script>
+
+<script>
+        var valorn='';
+            paypal.Buttons({
+
+                // Set up the transaction
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: valorn
+                            }
+                        }]
+                    });
+                },
+
+                // Finalize the transaction
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                        // Show a success message to the buyer
+                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                });
+            }
+        }).render('#paypal-button-container');
+</script>
+
+<script>
+        function valorPago(string valor){
+            alert("boton")
+        }
+</script> 
